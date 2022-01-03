@@ -80,3 +80,26 @@ function voidFunction(num: number): void {
 
 // undefined is a type in TypeScript
 
+
+// Function Types
+function add(n1: number, n2: number) {
+    return n1 + n2;
+};
+
+const functionType: Function = voidFunction;
+
+let addValues: (a: number, b: number) => number; 
+addValues = add;
+
+
+// Unknown Type
+let userInput: unknown;
+userInput = 'suvi';
+
+// The Never Type
+function generateError(message: string, code: number): never {
+    throw {message: message, errorCode: code};
+};
+
+generateError('An Error Occurred! ', 500);
+

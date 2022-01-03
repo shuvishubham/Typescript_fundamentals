@@ -1,11 +1,12 @@
-var person = {
+"use strict";
+const person = {
     name: 'shubham',
-    age: 40
+    age: 40,
 };
 console.log(person.name);
-var students = ['shubham', 'shivam', 5];
-var i = 0;
-var data = ['shubham', 19]; // Tuple is for defining data structure
+const students = ['shubham', 'shivam', 5];
+let i = 0;
+const data = ['shubham', 19]; // Tuple is for defining data structure
 do {
     console.log(students[i]);
     i++;
@@ -19,9 +20,9 @@ var Role;
 })(Role || (Role = {}));
 ;
 // 0 ,      1,        2
-var humans = {
+const humans = {
     name: 'shubham',
-    role: Role.READ_ONLY
+    role: Role.READ_ONLY,
 };
 if (humans.role === Role.ADMIN) {
     console.log("Is admin");
@@ -34,7 +35,7 @@ else {
 // const students: any[] = ['shubham', 'shivam', 5];
 // ------------>   Union Type
 function combine(input1, input2, input3) {
-    var result;
+    let result;
     if (input1 === 'number' && input2 === 'number') {
         result = input1 + input2;
     }
@@ -45,9 +46,9 @@ function combine(input1, input2, input3) {
     return result;
 }
 ;
-var combineAges = combine(30, 20, 'negi');
-var combineNames = combine('Max', 'Sam', 'suvi');
-var TypeAlises = 'suvi';
+const combineAges = combine(30, 20, 'negi');
+const combineNames = combine('Max', 'Sam', 'suvi');
+const TypeAlises = 'suvi';
 // ----------------> Function return and Voids
 function setReturnType(n1, n2) {
     return n1.toString() + n2.toString();
@@ -58,3 +59,20 @@ function voidFunction(num) {
 }
 ;
 // undefined is a type in TypeScript
+// Function Types
+function add(n1, n2) {
+    return n1 + n2;
+}
+;
+const functionType = voidFunction;
+let addValues;
+addValues = add;
+// Unknown Type
+let userInput;
+userInput = 'suvi';
+// The Never Type
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
+}
+;
+generateError('An Error Occurred! ', 500);
